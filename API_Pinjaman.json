@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "de99fe60-55f2-4c89-ad57-daa391be9235",
+		"name": "Pinjaman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30807725"
+	},
+	"item": [
+		{
+			"name": "Creat Pinjaman",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id_anggota",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "no_pinjaman",
+							"value": "3333",
+							"type": "text"
+						},
+						{
+							"key": "tgl_pinjaman",
+							"value": "22/12/2023",
+							"type": "text"
+						},
+						{
+							"key": "pinjaman",
+							"value": "Rp. 8.000.000",
+							"type": "text"
+						},
+						{
+							"key": "bunga",
+							"value": "1,5%",
+							"type": "text"
+						},
+						{
+							"key": "tenor",
+							"value": "12 Bulan",
+							"type": "text"
+						},
+						{
+							"key": "jatuh_tempo",
+							"value": "Tanggal 25",
+							"type": "text"
+						},
+						{
+							"key": "deskripsi",
+							"value": "pengajuan",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "berhasil",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/addPinjaman",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"addPinjaman"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Pinjaman",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/deletePinjaman/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"deletePinjaman",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pinjaman",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/updatPinjaman/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"updatPinjaman",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Pinjaman",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/listPinjaman",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"listPinjaman"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail Pinjaman",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/editPinjaman/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"editPinjaman",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

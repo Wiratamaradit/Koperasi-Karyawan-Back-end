@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "6f1c3a42-0fd7-44f9-bfa2-dcbdbe5d89e3",
+		"name": "Anggota",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30807725"
+	},
+	"item": [
+		{
+			"name": "Create Anggota",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nik",
+							"value": "123458",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Adi",
+							"type": "text"
+						},
+						{
+							"key": "ttl",
+							"value": "malang, 20 september 1997",
+							"type": "text"
+						},
+						{
+							"key": "alamat",
+							"value": "Jl. Bareng Tengah",
+							"type": "text"
+						},
+						{
+							"key": "departemen",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "jabatan",
+							"value": "CS",
+							"type": "text"
+						},
+						{
+							"key": "status_karyawan",
+							"value": "PKWT",
+							"type": "text"
+						},
+						{
+							"key": "deskripsi",
+							"value": "Office",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "aktif",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/addAnggota",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"addAnggota"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Anggota",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/deleteAnggota/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"deleteAnggota",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Anggota",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nik\": \"1234567890\",\r\n  \"name\": \"Indira\",\r\n  \"ttl\": \"Malang, 1 April 2011\",\r\n  \"alamat\": \"Malang\",\r\n  \"departemen\": \"Finance\",\r\n  \"jabatan\": \"Credit Control\",\r\n  \"status_karyawan\": \"PKWTT\",\r\n  \"deskripsi\": \"Officer\",\r\n  \"status\": \"Aktif\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/updatAnggota/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"updatAnggota",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Anggota",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nik",
+							"value": "121212",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "raditya adi",
+							"type": "text"
+						},
+						{
+							"key": "ttl",
+							"value": "Malang, 17 agustus 1945",
+							"type": "text"
+						},
+						{
+							"key": "alamat",
+							"value": "Jl. Tenaga baru",
+							"type": "text"
+						},
+						{
+							"key": "departemen",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "jabatan",
+							"value": "CS",
+							"type": "text"
+						},
+						{
+							"key": "status_karyawan",
+							"value": "PKWTT",
+							"type": "text"
+						},
+						{
+							"key": "deskripsi",
+							"value": "Officer",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Aktif",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail Anggota",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nik",
+							"value": "121212",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "raditya adi",
+							"type": "text"
+						},
+						{
+							"key": "ttl",
+							"value": "Malang, 17 agustus 1945",
+							"type": "text"
+						},
+						{
+							"key": "alamat",
+							"value": "Jl. Tenaga baru",
+							"type": "text"
+						},
+						{
+							"key": "departemen",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "jabatan",
+							"value": "CS",
+							"type": "text"
+						},
+						{
+							"key": "status_karyawan",
+							"value": "PKWTT",
+							"type": "text"
+						},
+						{
+							"key": "deskripsi",
+							"value": "Officer",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Aktif",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/editAnggota/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"editAnggota",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
