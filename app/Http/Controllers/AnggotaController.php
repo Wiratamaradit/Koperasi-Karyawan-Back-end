@@ -10,8 +10,9 @@ class AnggotaController extends Controller
 {
     function list() 
     {
-        return Anggota::all();
+        return response(["message" => "Berhasil menampilkan data", "data" => Anggota::all()], 200);
     }
+
     function addAnggota(Request $request) 
     {
         $anggota = new Anggota;
@@ -26,19 +27,23 @@ class AnggotaController extends Controller
         $anggota->status = $request->input('status');
         $anggota->save();
     
-
-        return $request->input();
+        return response(["message" => "Anggota berhasil ditambahkan", "data" => $request->input()], 200);
     }
+
     function editAnggota($id) 
     {
         $anggota = Anggota::find($id);
-        return $anggota;
+        return response(["message" => "Data", "data" => $anggota], 200);
     }
     
     function updateAnggota(Request $request, $id) 
     {
         $anggota = Anggota::find($id);
-        // Logika untuk mengupdate anggota
+
+        if (!$anggota) {
+            return response(["message" => "Anggota tidak ditemukan"], 404);
+        }
+
         $anggota->nik = $request->input('nik');
         $anggota->name = $request->input('name');
         $anggota->ttl = $request->input('ttl');
@@ -50,13 +55,19 @@ class AnggotaController extends Controller
         $anggota->status = $request->input('status');
         $anggota->save();
         
-        return $request->input();
+        return response(["message" => "Anggota berhasil diupdate", "data" => $request->input()], 200);
     }
 
-    function delete(Request $request, $id) {
-        DB::table('anggotas')->where('id_anggota',$id)->delete();
-        if($request) {
-            return ["result" => "Anggota berhasil di hapus"];
+    function delete(Request $request, $id) 
+    {
+        $anggota = Anggota::find($id);
+
+        if (!$anggota) {
+            return response(["message" => "Anggota tidak ditemukan"], 404);
         }
+
+        $anggota->delete();
+
+        return response(["message" => "Anggota berhasil dihapus"], 200);
     }
 }
