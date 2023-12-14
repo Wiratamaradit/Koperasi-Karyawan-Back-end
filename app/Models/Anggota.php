@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Anggota extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'id_anggota';
+    protected $primaryKey = 'id';
     public $timestamps = false;
     
 }

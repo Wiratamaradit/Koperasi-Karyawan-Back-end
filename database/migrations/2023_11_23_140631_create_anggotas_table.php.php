@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('departemen');
             $table->string('jabatan');
+            $table->string('golongan');
+            $table->string('divisi');
             $table->string('status_karyawan');
             $table->string('deskripsi');
             $table->string('status');

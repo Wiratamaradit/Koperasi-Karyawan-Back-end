@@ -11,4 +11,9 @@ class Pinjaman extends Model
     protected $table = 'pinjamans';
     protected $primaryKey = 'id_pinjaman';
     public $timestamps = false;
+
+    public function anggotas()
+    {
+        return $this->belongsTo(Anggota::class, 'id_anggota', 'id');
+    }
 }

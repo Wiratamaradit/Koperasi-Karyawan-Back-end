@@ -10,7 +10,8 @@ class AnggotaController extends Controller
 {
     function list() 
     {
-        return response(["message" => "Berhasil menampilkan data", "data" => Anggota::all()], 200);
+        $anggota = Anggota::all();
+        return response()->json(["message" => "Berhasil menampilkan data", "data" => $anggota], 200);
     }
 
     function addAnggota(Request $request) 
@@ -22,9 +23,10 @@ class AnggotaController extends Controller
         $anggota->alamat = $request->input('alamat');
         $anggota->departemen = $request->input('departemen');
         $anggota->jabatan = $request->input('jabatan');
+        $anggota->golongan = $request->input('golongan');
+        $anggota->divisi = $request->input('divisi');
         $anggota->status_karyawan = $request->input('status_karyawan');
         $anggota->deskripsi = $request->input('deskripsi');
-        $anggota->status = $request->input('status');
         $anggota->save();
     
         return response(["message" => "Anggota berhasil ditambahkan", "data" => $request->input()], 200);
@@ -50,9 +52,10 @@ class AnggotaController extends Controller
         $anggota->alamat = $request->input('alamat');
         $anggota->departemen = $request->input('departemen');
         $anggota->jabatan = $request->input('jabatan');
+        $anggota->golongan = $request->input('golongan');
+        $anggota->divisi = $request->input('divisi');
         $anggota->status_karyawan = $request->input('status_karyawan');
         $anggota->deskripsi = $request->input('deskripsi');
-        $anggota->status = $request->input('status');
         $anggota->save();
         
         return response(["message" => "Anggota berhasil diupdate", "data" => $request->input()], 200);
