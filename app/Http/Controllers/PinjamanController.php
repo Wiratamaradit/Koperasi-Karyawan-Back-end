@@ -11,7 +11,6 @@ class PinjamanController extends Controller
     {
         $pinjaman = new Pinjaman;
         $pinjaman->id_anggota = $request->input('id_anggota');
-        $pinjaman->no_pinjaman = $request->input('no_pinjaman');
         $pinjaman->tgl_pinjaman = $request->input('tgl_pinjaman');
         $pinjaman->pinjaman = $request->input('pinjaman');
         $pinjaman->bunga = $request->input('bunga');
@@ -26,7 +25,7 @@ class PinjamanController extends Controller
 
     function listPinjaman()
     {
-        $pinjamans = Pinjaman::all();
+        $pinjamans = Pinjaman::with('anggotas')->get();
         return response()->json(["message" => "Berhasil menampilkan data", "data" => $pinjamans], 200);
     }
 
@@ -38,7 +37,6 @@ class PinjamanController extends Controller
             return response()->json(["message" => "Pinjaman tidak ditemukan"], 404);
         }
 
-        // Lakukan validasi jika diperlukan
         $pinjaman->update($request->all());
 
         return response()->json(["message" => "Pinjaman berhasil diperbarui"], 200);
