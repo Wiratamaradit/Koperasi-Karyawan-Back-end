@@ -9,7 +9,7 @@ class Pinjaman extends Model
 {
     use HasFactory;
     protected $table = 'pinjamans';
-    protected $primaryKey = 'id_pinjaman';
+    protected $primaryKey = 'id';
     public $timestamps = false;
 
     public function anggotas()

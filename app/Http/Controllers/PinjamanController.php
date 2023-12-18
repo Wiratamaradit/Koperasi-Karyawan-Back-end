@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pinjaman;
+use App\Models\Anggota;
 use Illuminate\Http\Request;
 
 class PinjamanController extends Controller
@@ -10,6 +11,8 @@ class PinjamanController extends Controller
     function addPinjaman(Request $request)
     {
         $pinjaman = new Pinjaman;
+        $anggota = Anggota::find($request->input('anggotaId'));
+        $pinjaman->kode = 'PJM - ' . $anggota->nik . ' - ' . Pinjaman::count() + 1;
         $pinjaman->anggotaId = $request->input('anggotaId');
         $pinjaman->tgl_pinjaman = $request->input('tgl_pinjaman');
         $pinjaman->pinjaman = $request->input('pinjaman');
