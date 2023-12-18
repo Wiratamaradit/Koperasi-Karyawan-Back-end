@@ -14,6 +14,6 @@ class Pinjaman extends Model
 
     public function anggotas()
     {
-        return $this->belongsTo(Anggota::class, 'id_anggota', 'id');
+        return $this->belongsTo(Anggota::class, 'anggotaId', 'id');
     }
 }

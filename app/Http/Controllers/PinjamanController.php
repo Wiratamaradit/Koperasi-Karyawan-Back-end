@@ -10,13 +10,14 @@ class PinjamanController extends Controller
     function addPinjaman(Request $request)
     {
         $pinjaman = new Pinjaman;
-        $pinjaman->id_anggota = $request->input('id_anggota');
+        $pinjaman->anggotaId = $request->input('anggotaId');
         $pinjaman->tgl_pinjaman = $request->input('tgl_pinjaman');
         $pinjaman->pinjaman = $request->input('pinjaman');
         $pinjaman->bunga = $request->input('bunga');
         $pinjaman->tenor = $request->input('tenor');
         $pinjaman->jatuh_tempo = $request->input('jatuh_tempo');
         $pinjaman->deskripsi = $request->input('deskripsi');
+        $pinjaman->angsuran = ($pinjaman->pinjaman / $pinjaman->tenor) + ($pinjaman->pinjaman * $pinjaman->bunga);
         $pinjaman->status = $request->input('status');
         $pinjaman->save();
 
