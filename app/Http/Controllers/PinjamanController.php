@@ -12,7 +12,7 @@ class PinjamanController extends Controller
     {
         $pinjaman = new Pinjaman;
         $anggota = Anggota::find($request->input('anggotaId'));
-        $pinjaman->kode = 'PJM - ' . $anggota->nik . ' - ' . Pinjaman::count() + 1;
+        $pinjaman->kode = 'PJM - ' . $anggota->nik . ' -00 ' . Pinjaman::count() + 1;
         $pinjaman->anggotaId = $request->input('anggotaId');
         $pinjaman->tgl_pinjaman = $request->input('tgl_pinjaman');
         $pinjaman->pinjaman = $request->input('pinjaman');

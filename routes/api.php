@@ -24,13 +24,19 @@ Route::post('register',[UserController::class,'register']);
 Route::post('login',[UserController::class,'login']);
 
 Route::post('addAnggota',[AnggotaController::class,'addAnggota']);
-Route::get('/editAnggota/{id_anggota}', [AnggotaController::class, 'editAnggota']);
-Route::put('/updateAnggota/{id_anggota}', [AnggotaController::class, 'updateAnggota']);
-Route::delete('deleteAnggota/{id_anggota}',[AnggotaController::class,'delete']);
+Route::get('/editAnggota/{id}', [AnggotaController::class, 'editAnggota']);
+Route::put('/updateAnggota/{id}', [AnggotaController::class, 'updateAnggota']);
+Route::delete('deleteAnggota/{ida}',[AnggotaController::class,'delete']);
 Route::get('list',[AnggotaController::class,'list']);
 
 Route::post('addPinjaman',[PinjamanController::class,'addPinjaman']);
-Route::get('/editPinjaman/{id_pinjaman}', [PinjamanController::class, 'editPinjaman']);
-Route::put('/updatePinjaman/{id_pinjaman}', [PinjamanController::class, 'updatePinjaman']);
-Route::delete('deletePinjaman/{id_pinjaman}',[PinjamanController::class,'deletePinjaman']);
+Route::get('/editPinjaman/{id}', [PinjamanController::class, 'editPinjaman']);
+Route::put('/updatePinjaman/{id}', [PinjamanController::class, 'updatePinjaman']);
+Route::delete('deletePinjaman/{id}',[PinjamanController::class,'deletePinjaman']);
 Route::get('listPinjaman',[PinjamanController::class,'listPinjaman']);
+
+Route::post('userAdd',[PinjamanController::class,'userAdd']);
+Route::get('/userEdit/{id}', [PinjamanController::class, 'userEdit']);
+Route::put('/userUpdate/{id}', [PinjamanController::class, 'userUpdate']);
+Route::delete('userDelete/{id}',[PinjamanController::class,'userDelete']);
+Route::get('userList',[PinjamanController::class,'userList']);
